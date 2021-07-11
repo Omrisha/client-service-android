@@ -1,37 +1,19 @@
 package demo.layout;
 
-import javax.validation.Valid;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-
-import org.springframework.lang.NonNull;
-
-import demo.validators.NotEmptyElements;
-import demo.validators.ValidPassword;
 
 public class UserBoundary {
-	@NotBlank
-	@Email(message = "Email must be valid")
     private String email;
-	@Valid
-    private NameBoundary name;
-	@ValidPassword
+    private String firstName;
+    private String lastName;
     private String password;
-	@Pattern(regexp = "^[0-3]{1}[0-9]{1}-[0-1]{1}[0-2]{1}-[1-9]{1}[0-9]{3}$")
-    private String birthdate;
-	@NonNull
-	@NotEmptyElements
-    private String[] roles;
 
     public UserBoundary() {}
 
-    public UserBoundary(String email, NameBoundary name, String password, String birthdate, String[] roles) {
+    public UserBoundary(String email, String firstName, String lastName, String password) {
         this.email = email;
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.password = password;
-        this.birthdate = birthdate;
-        this.roles = roles;
     }
 
     public String getEmail() {
@@ -42,12 +24,20 @@ public class UserBoundary {
         this.email = email;
     }
 
-    public NameBoundary getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(NameBoundary name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getPassword() {
@@ -58,22 +48,6 @@ public class UserBoundary {
         this.password = password;
     }
 
-    public String getBirthdate() {
-        return birthdate;
-    }
-
-    public void setBirthdate(String birthdate) {
-        this.birthdate = birthdate;
-    }
-
-    public String[] getRoles() {
-        return roles;
-    }
-
-    public void setRoles(String[] roles) {
-        this.roles = roles;
-    }
-    
     public boolean comparePassword(String password) {
     	return this.password.equals(password);
     }
