@@ -25,11 +25,7 @@ public class PersistenaceUserManagementService implements UserManagmentService {
     @Override
     @Transactional
     public UserBoundary store(UserBoundary user) {
-        UserEntity entity = new UserEntity();
-        entity.setEmail(user.getEmail());
-        entity.setFirstName(user.getFirstName());
-        entity.setLastName(user.getLastName());
-        entity.setPassword(user.getPassword());
+        UserEntity entity = new UserEntity(user);
 
         UserEntity existed = dao.findByEmail(entity.getEmail());
 
