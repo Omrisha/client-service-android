@@ -3,6 +3,7 @@ package demo.data;
 import demo.layout.UserBoundary;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
@@ -37,6 +38,7 @@ public class UserEntity {
     }
 
     @Id
+    @GeneratedValue
     public long getId() {
         return id;
     }
