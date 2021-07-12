@@ -5,15 +5,17 @@ public class UserBoundary {
     private String email;
     private String firstName;
     private String lastName;
-    private String password;
+    private int cellphoneNumber;
+    private int numberOfPeople;
 
     public UserBoundary() {}
 
-    public UserBoundary(String email, String firstName, String lastName, String password) {
+    public UserBoundary(String email, String firstName, String lastName, int cellphoneNumber, int numberOfPeople) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.password = password;
+        this.cellphoneNumber = cellphoneNumber;
+        this.numberOfPeople = numberOfPeople;
     }
 
     public String getEmail() {
@@ -40,15 +42,19 @@ public class UserBoundary {
         this.lastName = lastName;
     }
 
-    public String getPassword() {
-        return password;
+    public int getCellphoneNumber() {
+        return cellphoneNumber;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCellphoneNumber(int cellphoneNumber) {
+        this.cellphoneNumber = cellphoneNumber;
     }
 
-    public boolean comparePassword(String password) {
-    	return this.password.equals(password);
+    public int getNumberOfPeople() {
+        return numberOfPeople;
+    }
+
+    public void setNumberOfPeople(int numberOfPeople) {
+        this.numberOfPeople = numberOfPeople;
     }
 }

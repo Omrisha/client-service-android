@@ -2,37 +2,47 @@ package demo.data;
 
 import demo.layout.UserBoundary;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class UserEntity {
-    private long Id;
+    private long id;
     private String email;
     private String firstName;
     private String lastName;
-    private String password;
+    private int cellphoneNumber;
+    private int numberOfPeople;
 
     public UserEntity() {
     }
 
-    public UserEntity(String email, String firstName, String lastName, String password) {
+    public UserEntity(UserBoundary user) {
+        if (user != null) {
+            this.setEmail(user.getEmail());
+            this.setFirstName(user.getFirstName());
+            this.setLastName(user.getLastName());
+            this.setCellphoneNumber(user.getCellphoneNumber());
+            this.setNumberOfPeople(user.getNumberOfPeople());
+        }
+    }
+
+    public UserEntity(long id, String email, String firstName, String lastName, int cellphoneNumber, int numberOfPeople) {
+        this.id = id;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.password = password;
+        this.cellphoneNumber = cellphoneNumber;
+        this.numberOfPeople = numberOfPeople;
     }
 
     @Id
-    @GeneratedValue
     public long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getEmail() {
@@ -59,18 +69,27 @@ public class UserEntity {
         this.lastName = lastName;
     }
 
-    public String getPassword() {
-        return password;
+    public int getCellphoneNumber() {
+        return cellphoneNumber;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCellphoneNumber(int cellphoneNumber) {
+        this.cellphoneNumber = cellphoneNumber;
+    }
+
+    public int getNumberOfPeople() {
+        return numberOfPeople;
+    }
+
+    public void setNumberOfPeople(int numberOfPeople) {
+        this.numberOfPeople = numberOfPeople;
     }
 
     public UserBoundary toBoundary() {
         return new UserBoundary(this.getEmail(),
                 this.getFirstName(),
                 this.getLastName(),
-                this.getPassword());
+                this.getCellphoneNumber(),
+                this.getNumberOfPeople());
     }
 }

@@ -34,11 +34,11 @@ Microservice for saving and querying clients of a restaurant.
 - DELETE /users
   Delete all clients in the system.
 
-## User JSON Examples
+## User Boundary JSON Examples
     {
-      "id": "42",
       "email": "omri@gmail.com",
       "firstName": "Omri",
       "lastName": "Shapira",
-      "password": "Passw0rd!",
+      "cellphoneNumber": 123456895,
+      "numberOfPeople": 5,
     }  
