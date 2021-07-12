@@ -11,7 +11,7 @@ public class UserEntity {
     private String email;
     private String firstName;
     private String lastName;
-    private int cellphoneNumber;
+    private String cellphoneNumber;
     private int numberOfPeople;
 
     public UserEntity() {
@@ -27,7 +27,7 @@ public class UserEntity {
         }
     }
 
-    public UserEntity(long id, String email, String firstName, String lastName, int cellphoneNumber, int numberOfPeople) {
+    public UserEntity(long id, String email, String firstName, String lastName, String cellphoneNumber, int numberOfPeople) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
@@ -69,11 +69,11 @@ public class UserEntity {
         this.lastName = lastName;
     }
 
-    public int getCellphoneNumber() {
+    public String getCellphoneNumber() {
         return cellphoneNumber;
     }
 
-    public void setCellphoneNumber(int cellphoneNumber) {
+    public void setCellphoneNumber(String cellphoneNumber) {
         this.cellphoneNumber = cellphoneNumber;
     }
 

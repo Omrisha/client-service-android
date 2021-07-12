@@ -5,12 +5,12 @@ public class UserBoundary {
     private String email;
     private String firstName;
     private String lastName;
-    private int cellphoneNumber;
+    private String cellphoneNumber;
     private int numberOfPeople;
 
     public UserBoundary() {}
 
-    public UserBoundary(String email, String firstName, String lastName, int cellphoneNumber, int numberOfPeople) {
+    public UserBoundary(String email, String firstName, String lastName, String cellphoneNumber, int numberOfPeople) {
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -42,11 +42,11 @@ public class UserBoundary {
         this.lastName = lastName;
     }
 
-    public int getCellphoneNumber() {
+    public String getCellphoneNumber() {
         return cellphoneNumber;
     }
 
-    public void setCellphoneNumber(int cellphoneNumber) {
+    public void setCellphoneNumber(String cellphoneNumber) {
         this.cellphoneNumber = cellphoneNumber;
     }
 

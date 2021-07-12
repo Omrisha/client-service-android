@@ -39,6 +39,6 @@ Microservice for saving and querying clients of a restaurant.
       "email": "omri@gmail.com",
       "firstName": "Omri",
       "lastName": "Shapira",
-      "cellphoneNumber": 123456895,
+      "cellphoneNumber": "123456895",
       "numberOfPeople": 5,
     }  
